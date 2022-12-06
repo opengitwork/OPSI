@@ -77,7 +77,7 @@ for comp in list_compartments_response.data:
                             hostinsight_failed_list = [host for host in hostinsight_enable_failed if (instance.display_name in host.host_display_name)]
                             for hostfailed in hostinsight_failed_list:
                                 enable_host_insight_response = opsi_client.enable_host_insight(
-                                enable_host_insight_details=oci.opsi.models.EnableMacsManagedCloudHostInsightDetails(
+                                enable_host_insight_details=oci.opsi.models.EnableEmManagedExternalHostInsightDetails(
                                 entity_source="MACS_MANAGED_CLOUD_HOST"),
                                 host_insight_id=hostfailed.id)
                 except Exception as ex:
